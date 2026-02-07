@@ -30,32 +30,31 @@ def gradeToNumber(grade):
     
 # converts given numeric value to letter grade
 def numberToGrade(grade):
-    if grade == 4.3:
+    if grade >= 4.15:
         return 'A+'
-    elif grade == 4:
+    elif grade >= 3.85:
         return 'A'
-    elif grade == 3.7:
+    elif grade >= 3.55:
         return 'A-'
-    elif grade == 3.4:
+    elif grade >= 3.2:
         return 'B+'
-    elif grade == 3:
+    elif grade >= 2.85:
         return 'B'
-    elif grade == 2.7:
+    elif grade >= 2.55:
         return 'B-'
-    elif grade == 2.4:
+    elif grade >= 2.2:
         return 'C+'
-    elif grade == 2:
+    elif grade >= 1.85:
         return 'C'
-    elif grade == 1.7:
+    elif grade >= 1.55:
         return 'C-'
-    elif grade == 1.4:
+    elif grade >= 1.2:
         return 'D+'
-    elif grade == 1:
+    elif grade >= 0.85:
         return 'D'
-    elif grade == 0.7:
+    elif grade >= 0.35:
         return 'D-'
-    elif grade == 0:
-        return 'F'
-    
+    else:
+        return 'F'    
     
 

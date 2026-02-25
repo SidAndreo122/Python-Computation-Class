@@ -1,0 +1,2 @@
+Greeting.
+This is the 'some text' file.

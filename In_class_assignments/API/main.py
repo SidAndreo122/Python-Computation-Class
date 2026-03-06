@@ -17,7 +17,7 @@ class TaskUpdate(BaseModel):
     description: Optional[str] = None
     completed: Optional[bool] = None
 
-app = FastAPI(title="To-Do List API")
+app = FastAPI(title="To-Do List API", docs_url="/docs")
 
 @app.get("/")
 def root():

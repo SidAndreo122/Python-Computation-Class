@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime DLC Store - SteamDeck Edition</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav class="navbar">
+    <div class="nav-brand">
+        <span class="nav-logo">&#9670;</span>
+        <span class="nav-title">Anime<span class="highlight">DLC</span></span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Games</a></li>
+        <li><a href="#">New Releases</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">SteamDeck</a></li>
+    </ul>
+    <div class="nav-actions">
+        <span class="nav-icon">&#128269;</span>
+        <span class="nav-icon">&#128722;</span>
+        <span class="cart-badge">3</span>
+    </div>
+</nav>
+
+<!-- ===== MAIN LAYOUT: LEFT=STORE  RIGHT=CHAT ===== -->
+<div class="main-layout">
+
+    <!-- LEFT COLUMN: Store Content -->
+    <div class="store-column">
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-bg">
+                <!-- SVG decorative shapes -->
+                <svg class="hero-svg" viewBox="0 0 800 300" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Background gradient blocks -->
+                    <defs>
+                        <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#0a0a1a;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#1a0a3a;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="glowBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:0.8" />
+                            <stop offset="100%" style="stop-color:#7b2fff;stop-opacity:0.8" />
+                        </linearGradient>
+                    </defs>
+                    <rect width="800" height="300" fill="url(#heroGrad)" />
+
+                    <!-- Decorative geometric anime-style lines -->
+                    <line x1="0" y1="50" x2="800" y2="250" stroke="#00d4ff" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="0" y1="150" x2="800" y2="50" stroke="#7b2fff" stroke-width="0.5" opacity="0.3"/>
+                    <line x1="200" y1="0" x2="600" y2="300" stroke="#ff2f7b" stroke-width="0.5" opacity="0.2"/>
+
+                    <!-- Hexagon pattern (SteamDeck motif) -->
+                    <polygon points="680,60 710,40 740,60 740,100 710,120 680,100" fill="none" stroke="#00d4ff" stroke-width="1.5" opacity="0.5"/>
+                    <polygon points="700,70 710,63 720,70 720,84 710,91 700,84" fill="url(#glowBlue)" opacity="0.3"/>
+
+                    <polygon points="60,180 90,160 120,180 120,220 90,240 60,220" fill="none" stroke="#ff2f7b" stroke-width="1.5" opacity="0.4"/>
+                    <polygon points="80,190 90,183 100,190 100,204 90,211 80,204" fill="#ff2f7b" opacity="0.2"/>
+
+                    <!-- Katana silhouette -->
+                    <line x1="550" y1="30" x2="420" y2="270" stroke="#c0c0c0" stroke-width="3" opacity="0.6"/>
+                    <line x1="550" y1="30" x2="555" y2="50" stroke="#c0c0c0" stroke-width="6" opacity="0.6"/>
+                    <rect x="490" y="140" width="30" height="6" rx="2" fill="#888" opacity="0.8" transform="rotate(-62 490 140)"/>
+
+                    <!-- Energy orbs -->
+                    <circle cx="150" cy="80" r="25" fill="#00d4ff" opacity="0.1"/>
+                    <circle cx="150" cy="80" r="15" fill="#00d4ff" opacity="0.2"/>
+                    <circle cx="150" cy="80" r="5" fill="#00d4ff" opacity="0.8"/>
+
+                    <circle cx="650" cy="200" r="30" fill="#7b2fff" opacity="0.1"/>
+                    <circle cx="650" cy="200" r="18" fill="#7b2fff" opacity="0.2"/>
+                    <circle cx="650" cy="200" r="6" fill="#7b2fff" opacity="0.8"/>
+
+                    <!-- SteamDeck controller outline -->
+                    <ellipse cx="390" cy="155" rx="90" ry="60" fill="none" stroke="#555" stroke-width="2" opacity="0.5"/>
+                    <circle cx="365" cy="145" r="18" fill="none" stroke="#444" stroke-width="1.5" opacity="0.5"/>
+                    <circle cx="415" cy="165" r="18" fill="none" stroke="#444" stroke-width="1.5" opacity="0.5"/>
+                    <circle cx="340" cy="130" r="6" fill="#444" opacity="0.5"/>
+                    <circle cx="440" cy="130" r="6" fill="#444" opacity="0.5"/>
+
+                    <!-- Stars / sparkles -->
+                    <text x="100" y="230" font-size="18" fill="#ffd700" opacity="0.7">&#10022;</text>
+                    <text x="300" y="40"  font-size="12" fill="#ffd700" opacity="0.5">&#10022;</text>
+                    <text x="500" y="260" font-size="14" fill="#ffd700" opacity="0.6">&#10022;</text>
+                    <text x="720" y="80"  font-size="10" fill="#00d4ff" opacity="0.6">&#10022;</text>
+                </svg>
+            </div>
+
+            <!-- Hero text overlay -->
+            <div class="hero-content">
+                <p class="hero-sub">SteamDeck Verified &bull; Instant Download &bull; 500+ Titles</p>
+                <h1 class="hero-title">Level Up Your<br/><span class="gradient-text">Anime Experience</span></h1>
+                <p class="hero-desc">
+                    Premium DLC content for the best anime games on SteamDeck.
+                    Unlock new characters, story arcs, and legendary gear today.
+                </p>
+                <div class="hero-buttons">
+                    <button class="btn-primary">Browse DLC</button>
+                    <button class="btn-secondary">SteamDeck Deals</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><span class="stat-num">500+</span><span class="stat-label">DLC Packs</span></div>
+                    <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Anime Games</span></div>
+                    <div class="stat"><span class="stat-num">4.9&#9733;</span><span class="stat-label">Avg Rating</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION HEADER -->
+        <div class="section-header">
+            <h2>Featured <span class="highlight">DLC Packs</span></h2>
+            <p>All titles verified for SteamDeck. Instant delivery to your library.</p>
+        </div>
+
+        <!-- PRODUCT GRID -->
+        <div class="product-grid">
+            {% for product in products %}
+            <div class="product-card" style="--card-color: {{ product.color }}; --card-accent: {{ product.accent }};">
+                <!-- Thumbnail graphic (CSS + SVG inline) -->
+                <div class="card-thumb">
+                    <svg viewBox="0 0 200 130" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="g{{ product.id }}" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:{{ product.color }};stop-opacity:1"/>
+                                <stop offset="100%" style="stop-color:{{ product.accent }};stop-opacity:0.6"/>
+                            </linearGradient>
+                        </defs>
+                        <rect width="200" height="130" fill="url(#g{{ product.id }})"/>
+                        <!-- Decorative patterns per card -->
+                        <circle cx="160" cy="30" r="40" fill="{{ product.accent }}" opacity="0.15"/>
+                        <circle cx="40"  cy="100" r="30" fill="{{ product.color }}" opacity="0.3"/>
+                        <line x1="0" y1="65" x2="200" y2="65" stroke="{{ product.accent }}" stroke-width="0.5" opacity="0.4"/>
+                        <line x1="100" y1="0" x2="100" y2="130" stroke="{{ product.accent }}" stroke-width="0.5" opacity="0.4"/>
+                        <!-- Icon number representing DLC ID -->
+                        <text x="100" y="75" font-size="48" text-anchor="middle" fill="{{ product.accent }}" opacity="0.25" font-weight="bold">{{ product.id }}</text>
+                        <!-- DLC label -->
+                        <rect x="0" y="100" width="200" height="30" fill="rgba(0,0,0,0.5)"/>
+                        <text x="10" y="120" font-size="11" fill="white" font-family="monospace">DLC Pack #{{ "%02d"|format(product.id) }}</text>
+                    </svg>
+                    <span class="badge badge-{{ product.badge|lower }}">{{ product.badge }}</span>
+                </div>
+
+                <!-- Card info -->
+                <div class="card-body">
+                    <p class="card-game">{{ product.game }}</p>
+                    <h3 class="card-dlc">{{ product.dlc }}</h3>
+                    <p class="card-desc">{{ product.description }}</p>
+                    <div class="card-footer">
+                        <span class="card-price">${{ "%.2f"|format(product.price) }}</span>
+                        <button class="btn-add">+ Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="store-footer">
+            <p>&copy; 2025 AnimeDLC Store &mdash; All games SteamDeck Verified &mdash; Prototype Build v0.1</p>
+        </footer>
+
+    </div><!-- end store-column -->
+
+    <!-- RIGHT COLUMN: Chat Assistant iframe -->
+    <div class="chat-column">
+        <div class="chat-panel">
+            <div class="chat-header">
+                <span class="chat-icon">&#129302;</span>
+                <div>
+                    <h3>Anime DLC Assistant</h3>
+                    <p>Powered by Gemini AI</p>
+                </div>
+                <span class="chat-status">&#9679; Live</span>
+            </div>
+            <iframe
+                src="{{ chat_iframe_url }}"
+                title="Anime DLC Chat Assistant"
+                class="chat-iframe"
+                allow="clipboard-write"
+            ></iframe>
+        </div>
+    </div><!-- end chat-column -->
+
+</div><!-- end main-layout -->
+
+</body>
+</html>

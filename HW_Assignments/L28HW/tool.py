@@ -3,12 +3,10 @@
 # Tool Name : Dead Stock Detector
 # Domain : Supply Chain/Inventory
 # Author : Sidney Andreano
-# Description: <one sentence on what this computes
-# and why it matters in the domain>
+# Description: This function computes the financial holding cost and severity of risk
+# towards a dead stock scenario. This can be helpful to know what product is at risk of "running out" soon.
 # Usage : See README.md for a sample call.
 # -------------------------------------------------------
-from enum import Enum
-
 from enum import Enum
 class Severity(Enum):
     HEALTHY = "healthy"
@@ -27,15 +25,19 @@ def get_severity(days):
 
 def detect_dead_stock(units_on_hand: float, daily_demand: float, holding_cost_per_day: float, cost_per_unit: float) -> dict:
     """
-        One-sentence summary.
+        Computes the financial holding cost and severity classification of slow-moving or dead inventory.
         Args:
-            param1 (type): description.
-            param2 (type): description.
+            units_on_hand (float): Amount of individual units of product that is currently available.
+            daily_demand (float): A numerical representation of daily demand of a certain product.
+            holding_cost_per_day (float): The cost amount per day of holding a product in inventory.
+            cost_per_unit (float): The cost amount of a product per individual unit.
         Returns:
             dict: {
-                "result": <primary computed value>,
-                "unit": <string label, e.g. "USD" or "liters">,
-                "detail": <optional breakdown or explanation string>
+                "result": <total_holding_cost, holding_cost_per_day * units_on_hand * days_of_stock>,
+                "unit": <"USD ($)">,
+                "days_of_stock_remaining": <days_of_stock, units_on_hand / daily_demand>,
+                "severity": <severity, label on how severe risk of dead stock is>,
+                "detail": <a general summary of all previous dictionary keys>
             }
         Raises:
             ValueError: if any input is out of expected range or type.
@@ -59,17 +61,19 @@ def detect_dead_stock(units_on_hand: float, daily_demand: float, holding_cost_pe
         raise ValueError(f"units_on_hand must be positive, got {units_on_hand}.")
     if daily_demand < 0:
         raise ValueError(f"daily_demand must be positive, got {daily_demand}.")
-    if daily_demand == 0:
-        demand_warning = input("WARNING: You have set daily_demand as 0, which will automatically cause a dead stock. Do you want to continue (Y/N)? ").upper()
-        if input == 'Y':
-            days_of_stock = float('inf')
-            get_severity(days_of_stock)
-        else:
-            raise ValueError(f"You have chosen not to continue, calculation canceled.")
     if holding_cost_per_day <= 0:
         raise ValueError(f"holding_cost_per_day must be positive and must not be 0, got {holding_cost_per_day}.")
     if cost_per_unit <= 0:
         raise ValueError(f"cost_per_unit must be positive and must not be zero, got {cost_per_unit}.")
+    if daily_demand == 0:
+        return {
+            "result": units_on_hand * holding_cost_per_day,
+            "unit": "USD ($)",
+            "days_of_stock_remaining": float('inf'),
+            "severity": Severity.DEAD,
+            "detail": f"{units_on_hand} units on hand with no demand. Classified as 'dead stock', costing ${units_on_hand * holding_cost_per_day:,.2f}/day in holding costs indefinitely."
+        }
+    
 
     days_of_stock = units_on_hand / daily_demand # days of stock remaining based on demand
     total_holding_cost = units_on_hand * holding_cost_per_day * days_of_stock # financial loss 

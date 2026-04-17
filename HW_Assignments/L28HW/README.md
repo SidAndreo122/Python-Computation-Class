@@ -15,7 +15,8 @@ Or you can incorporate it into a LLM project by including
 ```python
 from tool import detect_dead_stock
 ```
-**Usage Example**
+
+## Usage Example
 An example of when this tool can be helpful is with this following code snippet
 ```python
 from tool import detect_dead_stock

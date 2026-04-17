@@ -2,7 +2,8 @@
 
 ## Purpose
 In supply chain management, dead stock refers to inventory that remains unsold — often sitting in warehouses for a long amount of time. This ends up costing more to store it than what the product would generate in revenue. This tool allows users to compute total financial holding cost of slow-moving products and classifies its severity risk of becoming a dead stock. This gives users a clear, deterministic answer which products are a liability and gives an idea of what to do next with that product.
-**Installation/Setup**
+
+## Installation/Setup
 This tool simply just requires the `enum` built-in Python module, so no further installations are needed. 
 To begin using this tool download the `tool.py` file, and place it into your project directory. 
 
